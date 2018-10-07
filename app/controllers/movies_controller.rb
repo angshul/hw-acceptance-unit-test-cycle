@@ -60,7 +60,7 @@ class MoviesController < ApplicationController
       flash[:notice]="'#{@movie.title}' has no data about the director"
       redirect_to movies_path
     end
-     @movies = @movie.similar_movies
+    
      @movies = Movie.where('director=?',@movie.director)
   end
   
